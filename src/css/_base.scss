@@ -1,0 +1,449 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+}
+h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 900;
+  margin: 0;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+
+}
+h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+}
+h3 {
+  font-size: 2rem;
+}
+
+header {
+  &.top {
+    background: url("images/wine-grapes.jpg") center no-repeat;
+    background-size: cover;
+    color: $color-light;
+    .wrap {
+      height: 100%;
+      background-image: linear-gradient(to bottom, rgba(61,26,22,0), rgba(61,26,22,0.6));
+    }
+    .header-content {
+      padding: 4rem 0;
+      margin: 0 4rem;
+      .header-rating {
+        padding: 4px 8px;
+        background-color: #ffe033;
+        display: inline-flex;
+        border-radius: 18px;
+        align-items: center;
+        font-size: 1.4rem;
+        .header-rating_tag {
+          color: $color-dark;
+          margin-right: 5px;
+        }
+      }
+      .header-divider {
+        height: 1px;
+        opacity: 0.2;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        background-color: $color-light;
+      }
+      h1 {
+        font-size: 3.4rem;
+      }
+      h3 {
+        margin: 0;
+        font-size: 2rem;
+      }
+      .sub-header {
+        color: $color-brand;
+      }
+    }
+  }
+}
+.wine-paradise {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  grid-gap: 10px;
+  height: 94vh;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-top: 2vh;
+  & > * {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: solid 1px #eee;
+  }
+  & > *:first-child {
+    background: #ededed;
+  }
+  & > *:nth-child(2) {
+    padding: 2rem 0;
+    overflow-y: hidden;
+    background: #f2f2f2;
+    border-radius: 4px;
+  }
+  & > *:last-child {
+    background: #ededed;
+    padding: 2rem;
+  }
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 2rem;
+  &.order {
+    li {
+      border-bottom: 1px solid $color-dark;
+      padding: 2rem 0 2rem 0.2rem;
+      display: flex;
+      font-size: 1.4rem;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        border: 0;
+        display: inline;
+        line-height: 1;
+        padding: 0 4px;
+        background: transparent;
+        color: $color-brand;
+        &:after {
+          display: none;
+        }
+      }
+      span {
+        &.count {
+          position: relative;
+          overflow: hidden;
+          float: left;
+          span {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+.nothingSelected {
+  text-align: center;
+  margin: 0 10px;
+}
+.total {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  border-bottom: 3px solid $color-dark;
+  border-top: 3px double $color-dark;
+}
+.total_wrap {
+  padding: 1rem 2rem;
+}
+.total_wrap-free {
+  font-size: 1.2rem;
+}
+.total_wrap-final {
+  margin-top: 10px;
+}
+.total_wrap-cheap {
+  font-weight: 300;
+}
+.unavailable {
+  background: #f8d0d2;
+}
+.price {
+  font-size: 1.2rem;
+}
+.order-title {
+  text-align: center;
+}
+.wine-edit {
+  margin-bottom: 20px;
+  border: 1px solid $color-dark;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 450px;
+  textarea {
+    width: 100%;
+    min-height: 60px;
+  }
+  input {
+    &:last-of-type {
+      width: 100%;
+    }
+  }
+  button {
+    // border-radius: 5px;
+    width: 100%;
+    border: 0;
+    font-size: 1.2rem;
+  }
+  .status {
+    width: 100%;
+  }
+}
+.wine-edit input,
+.wine-edit textarea,
+.wine-edit select {
+  width: 50%;
+  padding: 10px;
+  line-height: 1;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid $color-dark;
+  appearance: none;
+  border-radius: 0;
+  outline: 0;
+  background: $color-light;
+}
+
+.wine-edit textarea {
+    width: 100%;
+}
+.wine-edit input:focus,
+.wine-edit textarea:focus,
+.wine-edit select:focus {
+  // outline: none;
+  background: $color-light;
+}
+.form__name {
+  border-right: 1px solid $color-dark;
+  
+}
+.menu, .order-wrap, .menu-admin {
+  border-radius: 10px;
+  border: none;
+}
+.menu-wine {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: $color-light;
+  padding: 2rem;
+  border-radius: 10px;
+  p {
+    margin: 5px 0;
+    font-size: 1.6rem;
+  }
+  .wine-name {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .price {
+    font-size: 1.4rem;
+    justify-content: flex-end;
+    font-family: 'Montserrat', sans-serif;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.buttonOrder {
+  transform: skew(-2deg);
+  border-radius: 5px;
+}
+.buttonLogout {
+  border-radius: 5px;
+}
+button,
+input[type=submit] {
+  text-transform: uppercase;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: $color-brand;
+  color: $color-light;
+  font-size: 1.4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  transition: all 0.2s;
+  position: relative;
+  z-index: 2;
+}
+button[disabled],
+input[type=submit][disabled] {
+  color: $color-brand;
+  background: $color-light;
+  transform: rotate(-10deg) scale(1.5) translateX(40%) translateY(-50%);
+  border: 1px solid $color-brand;
+}
+button[disabled]:hover,
+input[type=submit][disabled]:hover {
+  color: $color-brand;
+  cursor: not-allowed;
+}
+button[disabled]:after,
+input[type=submit][disabled]:after {
+  display: none;
+}
+button:after,
+input[type=submit]:after {
+  content: '';
+  z-index: -1;
+  display: block;
+  background: $color-dark;
+  position: absolute;
+  border-radius: 5px;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 0.2s;
+}
+button:hover,
+input[type=submit]:hover,
+button:focus,
+input[type=submit]:focus {
+  color: $color-light;
+  outline: 0;
+
+}
+button:hover:after,
+input[type=submit]:hover:after,
+button:focus:after,
+input[type=submit]:focus:after {
+  width: 100%;
+
+}
+button.warning:after,
+input[type=submit].warning:after {
+  background: $color-brand;
+}
+button.success:after,
+input[type=submit].success:after {
+  background: #008000;
+}
+button.github,
+input[type=submit].github {
+  border: 0;
+  display: block;
+  margin-bottom: 2rem;
+  width: 100%;
+  color: $color-light;
+  padding: 2rem;
+  border: 5px solid $color-light;
+  border-radius: 15px;
+  font-size: 1.6rem;
+}
+.login-container {
+  max-width: 400px;
+  margin: 200px auto 0;
+}
+.login-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  .avatar {
+    display: inline-block;
+    margin: 5px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+    transition: linear 0.25s;
+    height: 50px;
+    width: 50px;
+    img {
+      border-radius: 50%;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+.shop_select{
+  background: $color-light;
+  max-width: 460px;
+  margin: 200px auto;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 0 0 10px rgba(255,255,255,0.1), 0 0 10px rgba(0,0,0,0.18);
+  border-radius: 15px;
+  button {
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .arrow_picker {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding-top: 2px;
+    width: 14px;
+  }
+  .arrow_picker-up {
+    background: url("images/up.svg") no-repeat;
+    background-size: auto;
+    background-size: 100% auto;
+    width: 13px;
+    height: 12px;
+    top: 0;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+  .arrow_picker-down {
+    background: url("images/down.svg") no-repeat;
+    background-size: auto;
+    background-size: 100% auto;
+    width: 13px;
+    height: 12px;
+    cursor: pointer;
+  }
+}
+.shop_select_top {
+  position: relative;
+  max-width: 380px;
+  display: flex;
+  justify-content: space-between;
+}
+.shop_select_top-header {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.shop_select_bottom {
+  position: absolute;
+  padding: 10px 20px;
+  border: 1px solid $color-dark;
+  border-radius: 5px;
+  top: 85px;
+  left: 40px;
+  min-width: 350px;
+  background: $color-light;
+  box-shadow: 0 0 5px 3px rgba(0,0,0,0.1);
+  ul {
+    padding: 0 0 0 10px;
+    li {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 0;
+      &::before {
+        content: '■';
+        margin-right: 0.5rem;
+        color: $color-brand;
+      }
+    }
+  }
+}
