@@ -26,7 +26,7 @@ h2 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 3rem;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 }
 h3 {
   font-size: 2rem;
@@ -45,6 +45,7 @@ header {
       padding: 4rem 0;
       margin: 0 4rem;
       .header-rating {
+        margin-top: 0.5em;
         padding: 4px 8px;
         background-color: #ffe033;
         display: inline-flex;
@@ -58,13 +59,14 @@ header {
       }
       .header-divider {
         height: 1px;
-        opacity: 0.2;
+        opacity: 0.5;
         margin-top: 20px;
         margin-bottom: 8px;
-        background-color: $color-light;
+        background-color: $color-dark;
       }
       h1 {
         font-size: 3.4rem;
+        color: $color-dark;
       }
       h3 {
         margin: 0;
@@ -72,6 +74,10 @@ header {
       }
       .sub-header {
         color: $color-brand;
+      }
+      .header-tagline {
+        margin: 0 0 1em;
+        color: $color-dark;
       }
     }
   }
