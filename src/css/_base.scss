@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 body {
   -webkit-font-smoothing: antialiased;
@@ -425,7 +426,7 @@ input[type=submit].github {
 }
 .shop_select_bottom {
   position: absolute;
-  padding: 10px 20px;
+  padding: 0 20px;
   border: 1px solid $color-dark;
   border-radius: 5px;
   top: 85px;
@@ -434,8 +435,9 @@ input[type=submit].github {
   background: $color-light;
   box-shadow: 0 0 5px 3px rgba(0,0,0,0.1);
   ul {
-    padding: 0 0 0 10px;
+    padding: 15px 0 15px 20px;
     li {
+      font-family: 'Libre Baskerville' serif;
       cursor: pointer;
       list-style: none;
       padding: 5px 0;
@@ -446,4 +448,7 @@ input[type=submit].github {
       }
     }
   }
+}
+.shop_select-button {
+  font-weight: 700;
 }
