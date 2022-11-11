@@ -5,11 +5,11 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
 }
 h1 {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   font-weight: 900;
   margin: 0;
 }
@@ -18,9 +18,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
-
 }
 h2 {
   text-align: center;
@@ -39,7 +38,12 @@ header {
     color: $color-light;
     .wrap {
       height: 100%;
-      background-image: linear-gradient(to bottom, rgba(61,26,22,0), rgba(61,26,22,0.6));
+      background-image: linear-gradient(
+        to bottom,
+        rgba(61, 26, 22, 0),
+        rgba(61, 26, 22, 0.6)
+      );
+      background-color: rgba(255, 255, 255, 0.488);
     }
     .header-content {
       padding: 4rem 0;
@@ -150,7 +154,7 @@ ul {
   margin: 0 10px;
 }
 .total {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   border-bottom: 3px solid $color-dark;
   border-top: 3px double $color-dark;
@@ -219,7 +223,7 @@ ul {
 }
 
 .wine-edit textarea {
-    width: 100%;
+  width: 100%;
 }
 .wine-edit input:focus,
 .wine-edit textarea:focus,
@@ -229,9 +233,10 @@ ul {
 }
 .form__name {
   border-right: 1px solid $color-dark;
-  
 }
-.menu, .order-wrap, .menu-admin {
+.menu,
+.order-wrap,
+.menu-admin {
   border-radius: 10px;
   border: none;
 }
@@ -257,7 +262,7 @@ ul {
   .price {
     font-size: 1.4rem;
     justify-content: flex-end;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
   img {
     width: 100%;
@@ -273,38 +278,38 @@ ul {
   border-radius: 5px;
 }
 button,
-input[type=submit] {
+input[type="submit"] {
   text-transform: uppercase;
   padding: 0.8rem 1.5rem;
   border: none;
   background: $color-brand;
   color: $color-light;
   font-size: 1.4rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   transition: all 0.2s;
   position: relative;
   z-index: 2;
 }
 button[disabled],
-input[type=submit][disabled] {
+input[type="submit"][disabled] {
   color: $color-brand;
   background: $color-light;
   transform: rotate(-10deg) scale(1.5) translateX(40%) translateY(-50%);
   border: 1px solid $color-brand;
 }
 button[disabled]:hover,
-input[type=submit][disabled]:hover {
+input[type="submit"][disabled]:hover {
   color: $color-brand;
   cursor: not-allowed;
 }
 button[disabled]:after,
-input[type=submit][disabled]:after {
+input[type="submit"][disabled]:after {
   display: none;
 }
 button:after,
-input[type=submit]:after {
-  content: '';
+input[type="submit"]:after {
+  content: "";
   z-index: -1;
   display: block;
   background: $color-dark;
@@ -317,30 +322,28 @@ input[type=submit]:after {
   transition: all 0.2s;
 }
 button:hover,
-input[type=submit]:hover,
+input[type="submit"]:hover,
 button:focus,
-input[type=submit]:focus {
+input[type="submit"]:focus {
   color: $color-light;
   outline: 0;
-
 }
 button:hover:after,
-input[type=submit]:hover:after,
+input[type="submit"]:hover:after,
 button:focus:after,
-input[type=submit]:focus:after {
+input[type="submit"]:focus:after {
   width: 100%;
-
 }
 button.warning:after,
-input[type=submit].warning:after {
+input[type="submit"].warning:after {
   background: $color-brand;
 }
 button.success:after,
-input[type=submit].success:after {
+input[type="submit"].success:after {
   background: #008000;
 }
 button.github,
-input[type=submit].github {
+input[type="submit"].github {
   border: 0;
   display: block;
   margin-bottom: 2rem;
@@ -363,9 +366,9 @@ input[type=submit].github {
   .avatar {
     display: inline-block;
     margin: 5px;
-    border: 2px solid rgba(255,255,255,0.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
     transition: linear 0.25s;
     height: 50px;
     width: 50px;
@@ -376,13 +379,13 @@ input[type=submit].github {
     }
   }
 }
-.shop_select{
+.shop_select {
   background: $color-light;
   max-width: 460px;
   margin: 200px auto;
   padding: 40px;
   position: relative;
-  box-shadow: 0 0 0 10px rgba(255,255,255,0.1), 0 0 10px rgba(0,0,0,0.18);
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 10px rgba(0, 0, 0, 0.18);
   border-radius: 15px;
   button {
     border-radius: 5px;
@@ -439,16 +442,16 @@ input[type=submit].github {
   left: 40px;
   min-width: 350px;
   background: $color-light;
-  box-shadow: 0 0 5px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
   ul {
     padding: 15px 0 15px 20px;
     li {
-      font-family: 'Libre Baskerville' serif;
+      font-family: "Libre Baskerville" serif;
       cursor: pointer;
       list-style: none;
       padding: 5px 0;
       &::before {
-        content: '■';
+        content: "■";
         margin-right: 0.5rem;
         color: $color-brand;
       }
