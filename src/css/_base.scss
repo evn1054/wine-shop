@@ -198,13 +198,23 @@ ul {
     }
   }
   button {
-    // border-radius: 5px;
     width: 100%;
     border: 0;
     font-size: 1.2rem;
   }
-  .status {
+  .wine__form-status,
+  .wine__form-type,
+  .wine__form-region,
+  .wine__form-producer,
+  .wine__form-fortress,
+  .wine__form-volume,
+  .wine__form-grape,
+  .wine__form-img {
     width: 100%;
+    border-top: 1px solid $color-dark;
+  }
+  .wine__form-name {
+    border-right: 1px solid $color-dark;
   }
 }
 .wine-edit input,
@@ -215,10 +225,8 @@ ul {
   line-height: 1;
   font-size: 1.2rem;
   border: none;
-  border-bottom: 1px solid $color-dark;
   appearance: none;
   border-radius: 0;
-  outline: 0;
   background: $color-light;
 }
 
@@ -228,7 +236,6 @@ ul {
 .wine-edit input:focus,
 .wine-edit textarea:focus,
 .wine-edit select:focus {
-  // outline: none;
   background: $color-light;
 }
 .form__name {
