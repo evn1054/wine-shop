@@ -249,7 +249,7 @@ ul {
 }
 .menu-wine {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 1fr 3fr;
   gap: 10px;
   margin-bottom: 10px;
   overflow: hidden;
@@ -271,17 +271,27 @@ ul {
     justify-content: flex-end;
     font-family: "Montserrat", sans-serif;
   }
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 300px;
+  }
   img {
-    width: 100%;
+    // width: 100%;
     height: 100%;
     object-fit: cover;
   }
+}
+.wine-details__other-info {
+  margin: 15px 0;
 }
 .buttonOrder {
   transform: skew(-2deg);
   border-radius: 5px;
 }
-.buttonLogout {
+.buttonLogout,
+.menu-admin__load-wines {
   border-radius: 5px;
 }
 button,
