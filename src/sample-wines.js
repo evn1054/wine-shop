@@ -23,7 +23,7 @@ const sampleWines = {
     grape: "Грюнер Вельтлинер: 100%",
     image: "/wine-images/Turk-Gruner-Veltliner.jpg",
     price: 3254,
-    status: "available",
+    status: "unavailable",
   },
 
   wine3: {

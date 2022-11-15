@@ -14,6 +14,7 @@ class Wine extends React.Component {
       price,
       status,
     } = this.props.details;
+    const isAvailable = status === "available";
     return (
       <>
         <li className="menu-wine">
@@ -33,7 +34,13 @@ class Wine extends React.Component {
               <p>Объем: {volume}л.</p>
               <p>Сорт винограда: {grape}</p>
             </div>
-            <button className="buttonOrder">Заказать</button>
+            <button
+              className="buttonOrder"
+              disabled={!isAvailable}
+              onClick={() => this.props.addToOrder(this.props.index)}
+            >
+              {isAvailable ? "Заказать" : "Временно нет"}
+            </button>
           </div>
         </li>
       </>
