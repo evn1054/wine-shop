@@ -53,6 +53,24 @@ class App extends React.Component {
     base.removeBinding(this.ref);
   }
 
+  updateWine = (key, updatedWine) => {
+    const wines = { ...this.state.wines };
+    wines[key] = updatedWine;
+    this.setState({ wines });
+  };
+
+  deleteWine = (key) => {
+    const wines = { ...this.state.wines };
+    wines[key] = null;
+    this.setState({ wines });
+  };
+
+  deleteWineFromOrder = (key) => {
+    const order = { ...this.state.order };
+    delete order[key];
+    this.setState({ order });
+  };
+
   render() {
     return (
       <>
@@ -73,8 +91,18 @@ class App extends React.Component {
             </ul>
           </div>
 
-          <Order wines={this.state.wines} order={this.state.order} />
-          <MenuAdmin addWine={this.addWine} loadWineList={this.loadWineList} />
+          <Order
+            wines={this.state.wines}
+            order={this.state.order}
+            deleteWineFromOrder={this.deleteWineFromOrder}
+          />
+          <MenuAdmin
+            addWine={this.addWine}
+            loadWineList={this.loadWineList}
+            wines={this.state.wines}
+            updateWine={this.updateWine}
+            deleteWine={this.deleteWine}
+          />
         </div>
       </>
     );
