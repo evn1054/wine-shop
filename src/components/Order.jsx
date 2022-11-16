@@ -1,4 +1,5 @@
 import React from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class Order extends React.Component {
   renderOrder = (key) => {
@@ -11,26 +12,46 @@ class Order extends React.Component {
 
     if (!isAvailable) {
       return (
-        <li className="unavailable" key={key}>
-          Извините, {wine ? wine.name : "вино"} временно недоступно
-        </li>
+        <CSSTransition
+          classNames="order"
+          key={key}
+          timeout={{ enter: 500, exit: 500 }}
+        >
+          <li className="unavailable" key={key}>
+            Извините, {wine ? wine.name : "вино"} временно недоступно
+          </li>
+        </CSSTransition>
       );
     }
 
     return (
-      <li key={key}>
-        <span>
-          <span>{count}</span>
-          шт. {wine.name}
-          <span> {count * wine.price} ₽</span>
-          <button
-            className="cancellItem"
-            onClick={() => this.props.deleteWineFromOrder(key)}
-          >
-            &times;
-          </button>
-        </span>
-      </li>
+      <CSSTransition
+        classNames="order"
+        key={key}
+        timeout={{ enter: 500, exit: 500 }}
+      >
+        <li key={key}>
+          <span>
+            <TransitionGroup component="span" className="count">
+              <CSSTransition
+                classNames="count"
+                key={count}
+                timeout={{ enter: 500, exit: 500 }}
+              >
+                <span>{count}</span>
+              </CSSTransition>
+            </TransitionGroup>
+            шт. {wine.name}
+            <span> {count * wine.price} ₽</span>
+            <button
+              className="cancellItem"
+              onClick={() => this.props.deleteWineFromOrder(key)}
+            >
+              &times;
+            </button>
+          </span>
+        </li>
+      </CSSTransition>
     );
   };
 
@@ -51,7 +72,9 @@ class Order extends React.Component {
       <>
         <div className="order-wrap">
           <h2>Ваш Заказ</h2>
-          <ul className="order">{orderIds.map(this.renderOrder)}</ul>
+          <TransitionGroup component="ul" className="order">
+            {orderIds.map(this.renderOrder)}
+          </TransitionGroup>
           <div className="total">
             <div className="total_wrap">
               <div className="total_wrap-final">Итого: {total} ₽</div>
