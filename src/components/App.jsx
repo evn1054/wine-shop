@@ -5,7 +5,6 @@ import MenuAdmin from "./MenuAdmin";
 import sampleWines from "../sample-wines";
 import Wine from "./Wine";
 import base from "../base";
-// import { object } from "prop-types";
 
 class App extends React.Component {
   state = {

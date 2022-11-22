@@ -1,63 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import shops from "../sample-shops";
 
-class Landing extends React.Component {
-  state = {
-    display: false,
-    title: "",
-    url: "",
+const Landing = (props) => {
+  const [display, setDisplay] = useState(false);
+  const [title, setTitle] = useState("");
+  const [url, setUrl] = useState("");
+
+  const displayList = () => {
+    setDisplay(!display);
   };
 
-  displayList = () => {
-    const { display } = this.state;
-    this.setState({ display: !display });
-  };
-
-  getTitle = (shop) => {
+  const getTitle = (shop) => {
     const { title, url } = shop;
-    this.setState({ title, url, display: false });
+    setDisplay(false);
+    setTitle(title);
+    setUrl(url);
   };
 
-  goToShop = () => {
-    const { url } = this.state;
-    this.props.history.push(`/shop/${url}`);
+  const goToShop = () => {
+    props.history.push(`/shop/${url}`);
   };
 
-  render() {
-    return (
-      <>
-        <div className="shop_select">
-          <div onClick={this.displayList} className="shop_select_top">
-            <div className="shop_select_top-header">
-              {this.state.title ? this.state.title : "Выберите магазин"}
-            </div>
-
-            <div className="arrow_picker">
-              <div className="arrow_picker-up"></div>
-              <div className="arrow_picker-down"></div>
-            </div>
+  return (
+    <>
+      <div className="shop_select">
+        <div onClick={displayList} className="shop_select_top">
+          <div className="shop_select_top-header">
+            {title ? title : "Выберите магазин"}
           </div>
 
-          {this.state.display ? (
-            <div className="shop_select_bottom">
-              <ul>
-                {shops.map((shop) => (
-                  <li onClick={() => this.getTitle(shop)} key={shop.id}>
-                    {shop.title}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-
-          {this.state.title && !this.state.display ? (
-            <button onClick={this.goToShop} className="shop_select-button">
-              Перейти в магазин
-            </button>
-          ) : null}
+          <div className="arrow_picker">
+            <div className="arrow_picker-up"></div>
+            <div className="arrow_picker-down"></div>
+          </div>
         </div>
-      </>
-    );
-  }
-}
+
+        {display ? (
+          <div className="shop_select_bottom">
+            <ul>
+              {shops.map((shop) => (
+                <li onClick={() => getTitle(shop)} key={shop.id}>
+                  {shop.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        {title && !display ? (
+          <button onClick={goToShop} className="shop_select-button">
+            Перейти в магазин
+          </button>
+        ) : null}
+      </div>
+    </>
+  );
+};
+
 export default Landing;

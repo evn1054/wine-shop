@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = (props) => (
+const Header = () => (
   <header className="top">
     <div className="wrap">
       <div className="header-content">

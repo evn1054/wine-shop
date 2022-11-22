@@ -1,10 +1,10 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-class Order extends React.Component {
-  renderOrder = (key) => {
-    const wine = this.props.wines[key];
-    const count = this.props.order[key];
+const Order = (props) => {
+  const renderOrder = (key) => {
+    const wine = props.wines[key];
+    const count = props.order[key];
 
     const isAvailable = wine && wine.status === "available";
 
@@ -45,7 +45,7 @@ class Order extends React.Component {
             <span> {count * wine.price} ₽</span>
             <button
               className="cancellItem"
-              onClick={() => this.props.deleteWineFromOrder(key)}
+              onClick={() => props.deleteWineFromOrder(key)}
             >
               &times;
             </button>
@@ -55,35 +55,33 @@ class Order extends React.Component {
     );
   };
 
-  render() {
-    const orderIds = Object.keys(this.props.order);
-    const total = orderIds.reduce((prevTotal, key) => {
-      const wine = this.props.wines[key];
-      const count = this.props.order[key];
+  const orderIds = Object.keys(props.order);
+  const total = orderIds.reduce((prevTotal, key) => {
+    const wine = props.wines[key];
+    const count = props.order[key];
 
-      const isAvailable = wine && wine.status === "available";
-      if (isAvailable) {
-        return prevTotal + wine.price * count;
-      }
-      return prevTotal;
-    }, 0);
+    const isAvailable = wine && wine.status === "available";
+    if (isAvailable) {
+      return prevTotal + wine.price * count;
+    }
+    return prevTotal;
+  }, 0);
 
-    return (
-      <>
-        <div className="order-wrap">
-          <h2>Ваш Заказ</h2>
-          <TransitionGroup component="ul" className="order">
-            {orderIds.map(this.renderOrder)}
-          </TransitionGroup>
-          <div className="total">
-            <div className="total_wrap">
-              <div className="total_wrap-final">Итого: {total} ₽</div>
-            </div>
+  return (
+    <>
+      <div className="order-wrap">
+        <h2>Ваш Заказ</h2>
+        <TransitionGroup component="ul" className="order">
+          {orderIds.map(renderOrder)}
+        </TransitionGroup>
+        <div className="total">
+          <div className="total_wrap">
+            <div className="total_wrap-final">Итого: {total} ₽</div>
           </div>
         </div>
-      </>
-    );
-  }
-}
+      </div>
+    </>
+  );
+};
 
 export default Order;
