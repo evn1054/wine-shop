@@ -198,6 +198,11 @@ input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -229,7 +234,7 @@ h2 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 3rem;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 }
 
 h3 {
@@ -244,12 +249,14 @@ header.top {
 header.top .wrap {
   height: 100%;
   background-image: linear-gradient(to bottom, rgba(61, 26, 22, 0), rgba(61, 26, 22, 0.6));
+  background-color: rgba(255, 255, 255, 0.488);
 }
 header.top .header-content {
   padding: 4rem 0;
   margin: 0 4rem;
 }
 header.top .header-content .header-rating {
+  margin-top: 0.5em;
   padding: 4px 8px;
   background-color: #ffe033;
   display: inline-flex;
@@ -263,13 +270,14 @@ header.top .header-content .header-rating .header-rating_tag {
 }
 header.top .header-content .header-divider {
   height: 1px;
-  opacity: 0.2;
+  opacity: 0.5;
   margin-top: 20px;
   margin-bottom: 8px;
-  background-color: #ffffff;
+  background-color: #2c2c2c;
 }
 header.top .header-content h1 {
   font-size: 3.4rem;
+  color: #2c2c2c;
 }
 header.top .header-content h3 {
   margin: 0;
@@ -277,6 +285,10 @@ header.top .header-content h3 {
 }
 header.top .header-content .sub-header {
   color: #a51d35;
+}
+header.top .header-content .header-tagline {
+  margin: 0 0 1em;
+  color: #2c2c2c;
 }
 
 .wine-paradise {
@@ -401,8 +413,19 @@ ul.order li span.count span {
   border: 0;
   font-size: 1.2rem;
 }
-.wine-edit .status {
+.wine-edit .wine__form-status,
+.wine-edit .wine__form-type,
+.wine-edit .wine__form-region,
+.wine-edit .wine__form-producer,
+.wine-edit .wine__form-fortress,
+.wine-edit .wine__form-volume,
+.wine-edit .wine__form-grape,
+.wine-edit .wine__form-img {
   width: 100%;
+  border-top: 1px solid #2c2c2c;
+}
+.wine-edit .wine__form-name {
+  border-right: 1px solid #2c2c2c;
 }
 
 .wine-edit input,
@@ -413,10 +436,8 @@ ul.order li span.count span {
   line-height: 1;
   font-size: 1.2rem;
   border: none;
-  border-bottom: 1px solid #2c2c2c;
   appearance: none;
   border-radius: 0;
-  outline: 0;
   background: #ffffff;
 }
 
@@ -434,14 +455,16 @@ ul.order li span.count span {
   border-right: 1px solid #2c2c2c;
 }
 
-.menu, .order-wrap, .menu-admin {
+.menu,
+.order-wrap,
+.menu-admin {
   border-radius: 10px;
   border: none;
 }
 
 .menu-wine {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 1fr 3fr;
   gap: 10px;
   margin-bottom: 10px;
   overflow: hidden;
@@ -464,10 +487,19 @@ ul.order li span.count span {
   justify-content: flex-end;
   font-family: "Montserrat", sans-serif;
 }
+.menu-wine .image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 300px;
+}
 .menu-wine img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.wine-details__other-info {
+  margin: 15px 0;
 }
 
 .buttonOrder {
@@ -475,7 +507,8 @@ ul.order li span.count span {
   border-radius: 5px;
 }
 
-.buttonLogout {
+.buttonLogout,
+.menu-admin__load-wines {
   border-radius: 5px;
 }
 
@@ -697,6 +730,7 @@ input[type=submit].github {
 }
 .order-exit.order-exit-active {
   transform: translateX(120%);
+  padding: 0;
 }
 
 .count-enter {

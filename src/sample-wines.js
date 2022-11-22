@@ -1,7 +1,7 @@
 // Wine list
 const sampleWines = {
   wine1: {
-    name: '"Diario" Branco, Vinho Verde DOC, 2021',
+    name: '"Diario" Branco, Vinho Verde DOC, 2021г.',
     type: "Белое, полусухое",
     region: "Португалия, Винью Верде",
     producer: "Vercoope",
@@ -14,7 +14,7 @@ const sampleWines = {
   },
 
   wine2: {
-    name: 'Turk, Gruner Veltliner Obere Kremser "Sandgrube" Reserve, 2018',
+    name: 'Turk, Gruner Veltliner Obere Kremser "Sandgrube" Reserve, 2018г.',
     type: "Белое, полусухое",
     region: "Австрия, Нижняя Австрия, Кремшталь",
     producer: "Turk",
@@ -27,7 +27,7 @@ const sampleWines = {
   },
 
   wine3: {
-    name: 'Tamellini, "Le Bine de Costiola", Soave DOC Classico, 2019',
+    name: 'Tamellini, "Le Bine de Costiola", Soave DOC Classico, 2019г.',
     type: "Белое, сухое",
     region: "Италия, Венето, Соаве",
     producer: "Tamellini",
@@ -40,7 +40,7 @@ const sampleWines = {
   },
 
   wine4: {
-    name: 'Georg Breuer, Riesling "Venture", 2021',
+    name: 'Georg Breuer, Riesling "Venture", 2021г.',
     type: "Белое, полусухое",
     region: "Германия, Рейнгау",
     producer: "Georg Breuer",
@@ -53,7 +53,7 @@ const sampleWines = {
   },
 
   wine5: {
-    name: "Rene Lamy, Bourgogne AOC Chardonnay, 2016",
+    name: "Rene Lamy, Bourgogne AOC Chardonnay, 2016г.",
     type: "Белое, сухое",
     region: "Франция, Бургундия",
     producer: "Rene Lamy",
@@ -66,7 +66,7 @@ const sampleWines = {
   },
 
   wine6: {
-    name: 'Undurraga, "Aliwen" Cabernet Sauvignon-Syrah Reserva, 2021',
+    name: 'Undurraga, "Aliwen" Cabernet Sauvignon-Syrah Reserva, 2021г.',
     type: "Красное, сухое",
     region: "Чили, Центральная Долина, Долина Мауле",
     producer: "Undurraga",
@@ -79,7 +79,7 @@ const sampleWines = {
   },
 
   wine7: {
-    name: 'Pago Casa Gran, "Falcata" White, Valencia DO, 2021',
+    name: 'Pago Casa Gran, "Falcata" White, Valencia DO, 2021г.',
     type: "Белое, полусухое",
     region: "Испания, Валенсия",
     producer: "Pago Casa Gran",
@@ -92,7 +92,7 @@ const sampleWines = {
   },
 
   wine8: {
-    name: "Castello d'Albola, 'OSO', Toscana IGT, 2016",
+    name: "Castello d'Albola, 'OSO', Toscana IGT, 2016г.",
     type: "Красное, сухое",
     region: "Италия, Тоскана, Тоскана IGT",
     producer: "Zonin",
@@ -105,7 +105,7 @@ const sampleWines = {
   },
 
   wine9: {
-    name: 'Domaine Mongeard-Mugneret, Coteaux Bourguignons "La Superbe" AOC, 2019',
+    name: 'Domaine Mongeard-Mugneret, Coteaux Bourguignons "La Superbe" AOC, 2019г.',
     type: "Красное, сухое",
     region: "Франция, Бургундия",
     producer: "Mongeard-Mugneret",
