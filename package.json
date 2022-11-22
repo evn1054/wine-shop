@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "autoprefixer-stylus": "^1.0.0",
     "firebase": "8.2.6",
     "prop-types": "^15.7.2",
     "re-base": "^4.0.0",
@@ -11,8 +10,7 @@
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "react-transition-group": "^4.3.0",
-    "stylus": "^0.54.7"
+    "react-transition-group": "^4.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
